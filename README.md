@@ -7,29 +7,26 @@ A minor Emacs mode for running
 [Clojure test
 mode](https://github.com/technomancy/clojure-mode/blob/master/clojure-test-mode.el).
 
+Note that this is designed for classic expectations, and will not work with the
+[clojure.test version](https://github.com/clojure-expectations/clojure-test)
+
 ## Important
 
-Versions 0.0.2 and lower use swank, version 0.0.3 and greater use
-nrepl. Going forward, only nrepl will be supported.
+This package has some major breakage due to changes in the cider API and removal of
+legacy Emacs functions.
+
+It is probably better to look at CIDER's built-in test features. [CIDER has
+several functions to help you run all your
+tests](https://docs.cider.mx/cider/testing/running_tests.html).
 
 ## Installation
 
 *Please note Expectations v1.3.7 or greater is required to use expectations-mode.*
 
-You can either install the package manually or use the package manager package.el.
+expectations-mode is not in MELPA, so you must install the package manually.
 
-To install using the package manager, add the marmalade repo to your package-archives:
-
-```lisp
-(require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/") t)
-```
-
-And package-install expectations-mode in the usual way.
-
-To install manually, download expectations-mode.el, put it somewhere on your Emacs load
-path, and require it inside of init.el
+Download expectations-mode.el, put it somewhere on your Emacs load path, and
+require it inside of init.el
 
 ```lisp
 (require 'expectations-mode)
